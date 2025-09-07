@@ -9,7 +9,14 @@ dotenv.config({
 })                                                          // Load environment variables from .env file
 
 connectToDatabase()
-
+.then(() => {
+    app.listen(process.env.PORT || 8000, () => {
+        console.log(`Server started on port ${process.env.PORT}`)
+    })
+})
+.catch((err) => {
+    console.error("Failed to connect to the database:", err)
+})
 
 
 
