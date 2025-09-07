@@ -1,5 +1,5 @@
 //require("dotenv").config({path: "./public/temp/.env"})
-
+const app = require("./app.js")
 const dotenv = require("dotenv")
 
 const connectToDatabase = require("./db/db.js")
