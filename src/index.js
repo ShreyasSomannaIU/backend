@@ -1,8 +1,7 @@
 //require("dotenv").config({path: "./public/temp/.env"})
-const app = require("./app.js")
-const dotenv = require("dotenv")
-
-const connectToDatabase = require("./db/db.js")
+import app from "./app.js"
+import dotenv from "dotenv"
+import connectToDatabase from "./db/db.js"
 
 dotenv.config({
     path: "./public/temp/.env"
@@ -19,7 +18,7 @@ connectToDatabase()
 })
 
 
-
+export default app
 
 
 

@@ -1,6 +1,6 @@
-const mongoose = require("mongoose")
-const jwrt = require("jsonwebtoken")
-const bcrypt = require("bcrypt")
+import mongoose from "mongoose"
+import jwt from "jsonwebtoken"
+import bcrypt from "bcryptjs"
 
 
 const userSchema = new mongoose.Schema({
@@ -76,7 +76,7 @@ userSchema.methods.generateAccessToken = function() {         // it will generat
     }
 
 userSchema.methods.generateRefreshToken = function() {
-    return jwrt.sign(
+    return jwt.sign(
         {
         _id: this._id
     },
@@ -87,4 +87,4 @@ userSchema.methods.generateRefreshToken = function() {
     )
 }
 
-exports = module.exports = mongoose.model("User", userSchema)
+export const User = mongoose.model("User", userSchema)

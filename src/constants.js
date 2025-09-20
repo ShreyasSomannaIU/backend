@@ -1,1 +1,1 @@
-exports.DB_NAME = "backend_complex_db"
+export const DB_NAME = "BACKEND_COMPLEX"

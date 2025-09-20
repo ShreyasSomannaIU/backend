@@ -1,6 +1,6 @@
-const express = require("express")
-const cors = require("cors")
-const cookieParser = require("cookie-parser")
+import express from "express"
+import cors from "cors"
+import cookieParser from "cookie-parser"
 
 const app = express()
 
@@ -14,8 +14,16 @@ app.use(express.urlencoded({ extended: true, limit: "20kb" })) // Middleware to 
 app.use(express.static("public")) // Serve static files from the "public" directory
 app.use(cookieParser()) // Middleware to parse cookies
 
+//routes
+
+import userRouter from "./routes/user.routes.js";
+// routes declaration
+
+app.use("/api/v1/users", userRouter)
 
 
-exports = module.exports = app
+
+
+export default app
 
 // This file can be used to set up middlewares, routes, and other app configurations
