@@ -19,6 +19,6 @@ class apiError extends Error {
         }
     }
 }
-exports = module.exports = apiError
+export {apiError}
 
 // This class can be used to create consistent API error responses
